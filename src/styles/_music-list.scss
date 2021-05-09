@@ -1,0 +1,26 @@
+.songs{
+    &__title{
+        color: var(--redPrincipal);
+        font-size: 1.375rem;
+    }
+    &__grid{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 25px;
+        @media (min-width: 500px) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 22px;
+        }
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 22px;
+        }
+        @media (min-width: 900px) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+}

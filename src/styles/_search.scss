@@ -1,0 +1,22 @@
+.search{
+    position: relative;
+    &__input{
+        width: 100%;
+        display: block;
+        padding: 8px 20px 8px 18px;
+        min-height: (8px * 2) + 16px + 3px;
+        border: 2px solid var(--softGray);
+        border-radius: 20px;
+        outline: none;
+    }
+    &__icon{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: var(--softGray);
+    }
+    @media (min-width: 768px) {
+        width: 524px;
+    }
+}

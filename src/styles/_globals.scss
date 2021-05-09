@@ -1,0 +1,116 @@
+//global styles
+*,
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+}
+:root{
+    --darkRedSecondary: #662323;
+    --redPrincipal: #E86060;
+    --lightRed: #FF7676;
+    --softGray: #BDBDBD;
+    --darkGray: #555555;
+    --gray:#828282;
+    --white: #FFFFFF;
+}
+body{
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--darkGray);
+}
+body.sidebar__closed{
+    .main__content{
+        width: 100%;
+        margin-left: initial;
+    }
+    .sidebar{
+        transform: translateX(-100%);
+    }
+    .header__brand{
+        width: 100px;
+        background-color: var(--white);
+        @media (max-width:600px) {
+            width: 0;
+        }
+    }
+    .header__logo{
+        width: 65px;
+    }
+    .songs__grid{
+       @media (min-width: 768px) {
+            grid-template-columns: repeat(5, 1fr);
+       }
+       @media (min-width: 900px) {
+            grid-template-columns: repeat(6, 1fr);
+       }
+    }
+    .music{
+        @media (min-width: 768px) {
+            display: flex;
+        }
+        &__image{
+            @media (min-width: 768px) {
+                height: 100%;
+            }
+        }
+    }
+}
+img{
+    max-width: 100%;
+    width: auto;
+}
+p{
+    margin-top: 0;
+}
+.wrapper{
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.main{
+    margin-bottom:  150px;
+    padding-top: 90px;
+    &__content{
+        width: calc(100% - 330px);
+        margin-left: auto;
+        transition: width .5s ease;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
+button{
+    font-family: inherit;
+    font-size: .875rem;
+    outline: none;
+    cursor: pointer;
+}
+.btn{
+    padding: 6px 23px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.btn--primary{
+    background-color: var(--redPrincipal);
+    border-color: var(--redPrincipal);
+    color: var(--white);
+}
+.btn--outline{
+    border-color: var(--redPrincipal);
+    color: var(--redPrincipal);
+}
+.loading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--softGray);
+}

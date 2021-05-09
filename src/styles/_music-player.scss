@@ -1,0 +1,92 @@
+.player{
+    position: fixed;
+    width: 100%;
+    min-height: 100px;
+    transform: translateY(100%);
+    bottom: 0;
+    left: 0;
+    background-color: var(--redPrincipal);
+    z-index: 999;
+    box-shadow: 0px -5px 37px rgba(0, 0, 0, 0.2);
+    animation: slidePlayer .5s ease-in forwards;
+    &__item{
+        flex-grow: 1;
+        flex-basis: 0;
+        display: flex;
+    }
+    &__detail{
+        align-items: center;
+    }
+    &__info{
+        margin-left: 20px;
+        color: var(--white);
+    }
+    &__song{
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 0.875rem;
+    }
+    &__artist{
+        margin-bottom: 0;
+        font-size: .75rem;
+    }
+    &__cover{
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+    &__controls{
+        display: flex;
+        justify-content: center;
+    }
+    &__btn{
+        background-color: transparent;
+        border: none;
+        &--back{
+            margin-right: 10px;
+        }
+        &--forward{
+            margin-left: 10px;
+        }
+        &--play{
+            width: 60px;
+            height: 60px;
+            background-color: var(--lightRed);
+            border-radius: 50%;
+        }
+        &--volume{
+            margin-right: 30px;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+    }
+    &__volume{
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__input[type="range"]{
+        appearance: none;
+        height: 6px;
+        width: 100px;
+        border-radius: 3px;
+        outline: none;
+        margin-right: 20px;
+        &::-webkit-slider-thumb{
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+    @keyframes slidePlayer {
+       to{
+            transform: translateY(0);
+       }
+    }
+    @media (min-width: 520px) {
+        display: flex;
+        align-items: center;
+    }
+}
